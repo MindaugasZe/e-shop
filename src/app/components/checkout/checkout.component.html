@@ -1,0 +1,86 @@
+<div *ngIf="this.CartService.cartProducts.length!== 0 ">
+
+    <div class="container checkout">
+        <h1>Your order:</h1>
+        <div class=" ">
+            <div class="container rounded bg-white d-flex m-3 pt-3">
+                <div class="row pb-2 ms-2">
+                    <div class="col-12 text-start border rounded mb-3"
+                        *ngFor="let product of this.CartService.cartProducts" #item>
+                        <div class="d-flex">
+                            <div class="cart-product-image me-2 d-flex align-items-center">
+                                <img src="{{ product.image }}" alt="...">
+                            </div>
+                            <div class="pt-2 cart-item-info">
+                                <p>{{ product.title }} x{{ product.quantity }}</p>
+                                <p>Price: {{ product.price }} &euro;</p>
+                                <p class="mb-0" *ngIf="product.quantity > 1">Total: {{ product.quantity * product.price
+                                    }}
+                                    &euro;</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container rounded bg-white m-3 info-box">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+    </div>
+    <form class="row g-3 checkout-form" [formGroup] = "orderForm" (ngSubmit) ="onSubmit()" >
+        
+
+        <div class="col-md-4">
+            <input type="text"  
+            class="form-control input-group has-validation"
+            formControlName = "firstName"
+            placeholder="First name"
+            [ngClass]="{'is-invalid': firstName?.touched && firstName?.errors}" >
+        </div>
+
+
+        <div class="col-md-4">
+            <input type="text" 
+            class="form-control input-group has-validation" 
+            formControlName = "lastName"
+              placeholder="Last name" 
+             [ngClass]="{'is-invalid': lastName?.touched && lastName?.errors}">
+        </div>
+
+        <div class="col-md-4">
+            <input type="text" 
+            class="form-control input-group has-validation" 
+            formControlName = "email"
+              placeholder="Email" 
+             [ngClass]="{'is-invalid': email?.touched && email?.errors}">
+        </div>
+
+        <div class="col-md-4">
+            <input type="text" class="form-control input-group has-validation"  formControlName="city"
+                placeholder="City" [ngClass]="{'is-invalid': city?.touched && city?.errors}">
+        </div>
+
+        <div class="col-md-4">
+            <input type="text" class="form-control input-group has-validation" formControlName="street" placeholder="Street"
+                [ngClass]="{'is-invalid': street?.touched && street?.errors}">
+        </div>
+        <div class="col-md-4">
+            <input type="number" class="form-control input-group has-validation" formControlName="zip" placeholder="zip"
+                [ngClass]="{'is-invalid': zip?.touched && zip?.errors}">
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input has-validation" type="checkbox" formControlName="checkBox" id="invalidCheck2" 
+                [ngClass]="{'is-invalid': submitted && checkBox?.errors}">
+                <label class="form-check-label" for="invalidCheck2">
+                    Agree to terms and conditions
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-success" type="submit"  [disabled] ='orderForm.invalid' >Submit form</button>
+        </div>
+        
+    </form>
+</div>

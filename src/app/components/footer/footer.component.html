@@ -1,0 +1,174 @@
+
+    <footer class="hero">
+        <div class="row">
+            <div class="col-2">
+                <h5>About us</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">News</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">For business</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col-2">
+                <h5>Information</h5>
+                <ul class="nav flex-column" *ngFor='let info of information'>
+
+
+                    <li class="nav-item mb-2">
+                        <a class="nav-link p-0" data-bs-toggle="modal" data-bs-target="#ModalDelivery"> Delivery</a>
+                        <div class="modal fade" id="ModalDelivery" tabindex="-1" aria-labelledby="ModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="ModalLabel">Delivery</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ info.delivery }}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item mb-2">
+                        <a class="nav-link p-0" data-bs-toggle="modal" data-bs-target="#ModalPolicy"> Privacy policy </a>
+                        <div class="modal fade" id="ModalPolicy" tabindex="-1" aria-labelledby="ModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="ModalLabel">This is privacy policy</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ info.policy }}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>  
+
+
+                    <li class="nav-item mb-2">
+                        <a class="nav-link p-0" data-bs-toggle="modal" data-bs-target="#ModalPayment"> Payment </a>
+                        <div class="modal fade" id="ModalPayment" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="ModalLabel">This is about payment</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ info.payment }}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li> 
+
+
+                    <li class="nav-item mb-2">
+                        <a class="nav-link p-0" data-bs-toggle="modal" data-bs-target="#ModalWarranty"> Product warranty </a>
+                        <div class="modal fade" id="ModalWarranty" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="ModalLabel">This is about warranty</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ info.warranty }}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link p-0" data-bs-toggle="modal" data-bs-target="#ModalWarranty"> Product returning </a>
+                        <div class="modal fade" id="ModalWarranty" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="ModalLabel">This is about returning</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ info.returning }}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-2">
+                <h5>Contact us</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="tel:+37011122222" class="nav-link p-0 ">Customer service number
+                            <br>
+                            <img src="assets/phone.svg">+370 111 22222</a></li>
+                    <li class="nav-item mb-2"><a href="mailto:shop@gmail.com" class="nav-link p-0"><img
+                                src="assets/mail.svg" alt=""> shop@gmail.com <br>
+                        </a></li>
+                    <li class="nav-item mb-2">
+                        <p><img src="assets/clock.svg"> I - V 8:00 - 17:00</p>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <p><img src="assets/clock.svg"> VI - VII 10:00 - 15:00</p>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="col-4 offset-1">
+                <form [formGroup]="emailForm" (ngSubmit)="getEmail()">
+                    <h5>Subscribe to our newsletter</h5>
+                    <p>Monthly digest of whats new and exciting from us.</p>
+                    <div class="d-flex w-100 gap-2">
+                        <label for="newsletter1" class="visually-hidden">Email address</label>
+                        <input [(ngModel)]="email" id="newsletter1" name="email" type="text" formControlName="email"
+                            class="form-control input-group has-validation" [ngClass]="{'is-invalid': emails?.touched && emails?.errors}" placeholder="Email address">
+                        <button class="btn btn-success" type="submit">button</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between py-4 my-4 border-top">
+            <p>&copy; {{ currentYear }} e-shop.com. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a class="link-dark" href="https://twitter.com/"><img src="assets/twitter.svg"> </a>
+                </li>
+                <li class="ms-3"><a class="link-dark" href="https://www.instagram.com/"><img
+                            src="assets/instagram.svg"></a></li>
+                <li class="ms-3"><a class="link-dark" href="https://www.facebook.com/#!/"><img
+                            src="assets/facebook.svg"></a></li>
+            </ul>
+        </div>
+    </footer>

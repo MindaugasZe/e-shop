@@ -1,0 +1,27 @@
+<div class="login-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <form class="form-signin" (ngSubmit)="login(); logService.logger" [formGroup]="loginForm">
+                <h1 class="h3 mb-3 fw-normal">Please login</h1>
+                <div class="form-floating">
+                    <input
+                     type="email"
+                      class="form-control input-group has-validation"
+                       id="floatingInput"
+                        name="email" 
+                        formControlName="email"
+                        [ngClass]="{'is-invalid': email?.touched && email?.errors}"
+                        placeholder="name@example.com" 
+                        >
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control input-group has-validation" id="floatingPassword" name="password" formControlName="password"
+                        placeholder="Password"  [ngClass]="{'is-invalid': password?.touched && password?.errors}" >
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <button class="w-100 btn  btn-outline-primary" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

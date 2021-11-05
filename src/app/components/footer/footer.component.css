@@ -1,0 +1,26 @@
+li > a {
+  cursor: pointer;
+  color: black;
+}
+.hero {
+  padding: 10px 30px;
+}
+a:hover {
+  font-weight: bold;
+}
+
+footer {
+  padding: 10px 10px 0px 10px;
+  margin-top: 100px;
+}
+
+.py-4 {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.my-4 {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: 0 !important;
+}

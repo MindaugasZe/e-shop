@@ -1,0 +1,12 @@
+.hero{
+ /* width: 400px; */
+ margin: 100px auto;
+ display: flex;
+}
+.pumpkin{
+  margin: 30px 30px;
+}
+.title{
+    max-height: 200px;
+    margin: 0 auto;
+}

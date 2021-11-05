@@ -1,0 +1,51 @@
+<div *ngIf="this.CartService.cartProducts.length === 0 then cartEmpty else cart">
+
+</div>
+
+<ng-template #cart>
+    <div class="w-100 d-flex">
+        <div class="container rounded bg-white d-flex justify-content-center m-3 pt-3">
+            <div class="row w-100 pb-2">
+                <div class="col-12 text-start border rounded mb-3" *ngFor="let product of this.CartService.cartProducts" #item>
+                    <button type="button" class="btn btn-outline-success float-end m-2" (click)="removeFromCart(product, item)">Remove</button>
+                    <div class="d-flex">
+                        <div class="cart-product-image pe-2">
+                            <img src="{{ product.image }}" class="card-img-top" alt="...">
+                        </div>
+                        <div class="pt-2 cart-item-info">
+                            <p>{{ product.title }} x{{ product.quantity }}</p>
+                            <p>Price: {{ product.price }} &euro;</p>
+                            <p class="mb-0" *ngIf="product.quantity > 1">Total: {{ product.quantity * product.price }} &euro;</p>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3 mt-2">
+                        <button type="button" class="btn btn-outline-success" (click)="increase(product)">+</button>
+                        <input class="form-control" type="number" id="quantity" value="{{ product.quantity }}">
+                        <button type="button" class="btn btn-outline-success" (click)="decrease(product)">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container rounded bg-white m-3 info-box">
+            <div class="row">
+                <div class="col">
+                    <p>Cart totals, go to checkout</p>
+                    <a routerLink="/checkout" class="btn btn-outline-success" >Go to checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #cartEmpty>
+    <div class="container bg-white rounded p-5">
+        <div class="row">
+            <div class="col">
+                <p>The cart is empty.</p>
+                    <a class="btn btn-outline-success back-to-shop-button" routerLink="/shop" routerLinkActive="Active">
+                        Go to shop page
+                    </a>
+            </div>
+        </div>
+    </div>
+</ng-template>

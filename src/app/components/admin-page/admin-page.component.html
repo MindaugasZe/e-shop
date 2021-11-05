@@ -1,0 +1,28 @@
+<div class="container col-md-4">
+    <h1> Create new product cart</h1>
+    <form class="" [formGroup]="cartForm" novalidate>
+
+        <div class="form-group ">
+            <label for="image" class="form-label">Image</label>
+            <input formControlName="image" type="url" class="form-control input-group has-validation" id="image" [ngClass]="{'is-invalid': image?.touched && image?.errors}" value="" required>
+        </div>
+        <div class="form-group ">
+            <label for="title" class="form-label">Product</label>
+            <input formControlName="title" type="text" class="form-control input-group has-validation" id="title" [ngClass]="{'is-invalid': title?.touched && title?.errors}" value="" required>
+        </div>
+        <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <input formControlName="description" type="text" class="form-control input-group has-validation" [ngClass]="{'is-invalid': description?.touched && description?.errors}" id="description">
+        </div>
+        <div class="form-group">
+            <label for="price" class="form-label">Price</label>
+            <input formControlName="price" type="number" class="form-control" min="1" id="price">
+        </div>
+        <div class="form-group">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input readable formControlName="quantity" type="number" class="form-control" min="1" id="quantity">
+        </div>
+        <button class="btn btn-success" (click)="addProductCard()" [disabled]="cartForm.invalid" [routerLink]="'/shop'">Create Card</button>
+
+    </form>
+</div>

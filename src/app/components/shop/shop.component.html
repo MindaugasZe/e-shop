@@ -1,0 +1,30 @@
+<h1 class="display-1">Our Store</h1>
+<div class="input-group col">
+    <button class="btn btn-outline-success" type="button" ><img src="assets/search.svg"></button>
+    <input #input type="text" class="form-control" placeholder="product..." (keyup)="searchProducts(input.value)">
+</div>
+
+<div class="container">
+    <div class="card" style="width: 18rem;" *ngFor='let product of (searchProductResult.length > 0 ? searchProductResult : products)'>
+        <div class="d-flex justify-content-center shop-product-image">
+            <img src="{{ product.image }}" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text"> {{ product.description }}</p>
+            <p>price : {{ product.price | currency:"EUR" }}</p>
+            <div class="productsQuantity">
+                <button class="btn btn-outline-success" [disabled]='product.quantity == 0'
+                    (click)="decrease(product)">-</button>
+                <button class="btn btn-success" (click)="addToCart(product)">Add to cart</button>
+                <button class="btn btn-outline-success" (click)="increase(product)">+</button>
+            </div>
+            <p>Quantity: {{ product.quantity }}</p>
+        </div>
+        <div *ngIf="logService.logger == true">
+            <button class="btn btn-outline-danger cartButton" (click)="removeProduct(product.id)">Remove</button>
+            <button class="btn btn-outline-success cartButton" [routerLink]="['/admin-page']">Add product</button>
+        </div>
+    </div>
+</div>
+

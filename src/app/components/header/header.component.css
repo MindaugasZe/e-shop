@@ -1,0 +1,60 @@
+.banner-innerpage {
+  /* background-image: url(https://freewebheaders.com/wp-content/gallery/vegetables/bell-peppers-assortment-header.jpg); */
+  top: 0px;
+}
+.navbar {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0rem 0.5rem;
+  /* background-image: url(https://image.shutterstock.com/image-photo/panoramic-photo-multicolored-fruits-vegetables-260nw-1729728454.jpg); */
+}
+.navbar-toggler {
+  background-color: rgba(84, 84, 252, 0.466);
+}
+
+li {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  /* border-right-width: thin; */
+  border-left-width: thin;
+  /* border-right-style: solid; */
+  border-left-style: solid;
+  /* border-right-color: rgb(150, 150, 150); */
+  border-left-color: rgb(150, 150, 150);
+}
+
+ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #198754;
+  transition: 0.2s ease all;
+}
+
+.navbar a:hover {
+  font-weight: bold;
+}
+
+.btn {
+  position: initial;
+}
+
+.side-cart-image img {
+  width: auto;
+  max-height: 50px;
+}
+h1 {
+  margin: 30px auto;
+}

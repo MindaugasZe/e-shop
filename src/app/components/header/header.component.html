@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg bg-light" >
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand"  routerLink="/home" routerLinkActive="active">E-Sh<img class="apple" src="assets/apple.ico">p</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-link"><a routerLink="/shop" routerLinkActive="active">Shop</a></li>
+                <li class="nav-link"><a routerLink="/cart" routerLinkActive="active">Cart</a></li>
+                <li class="nav-link"><a routerLink="/about" routerLinkActive="active">About Us</a></li>
+                <li 
+                *ngIf = "logService.logger == false ; else elseBlock "
+                 class="nav-link">
+                    <a routerLink="/login" routerLinkActive="active">Login</a>
+                </li>
+                <ng-template #elseBlock>
+                    <li  class="nav-link"><a routerLink="/home" (click)='logService.logout() ' routerLinkActive="active">Logout</a>
+                    </li>
+                </ng-template>
+            </ul>
+
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight">Cart
+                <span class="badge bg-dark text-white ms-1 rounded-pill">{{ this.CartService.cartProducts.length }}</span>
+            </button>
+        </div>
+    </div>
+</nav>
+<!-- off screen cart -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Shopping Cart</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="container product-cart-item rounded border border-dark mb-2" *ngFor="let product of this.CartService.cartProducts" #item>
+            <div class="row">
+                <ul class="p-2 position-relative d-flex mb-0">
+                    <button (click)="removeFromCart(product, item)" type="button"
+                        class="btn-close text-reset position-absolute top-0 end-0 p-2"></button>
+                    <div class="col-3 d-flex align-items-center side-cart-image justify-content-center">
+                        <img src="{{product.image}}">
+                    </div>
+                    <div class="col-9">
+                        <li class="product-name text-start ps-2">{{ product.title }} x{{product.quantity}} </li>
+                        <li class="product-price text-start ps-2">{{ product.price }}&euro;</li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="btn btn-success mt-2 text-white" routerLink="/cart" routerLinkActive="active" data-bs-dismiss="offcanvas" aria-label="Close">
+            Cart
+        </button>
+    </div>
+</div>
+
+<section>
+    <div class="banner-innerpage">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 align-self-center text-center" data-aos="fade-down" data-aos-duration="1200">
+                    <h1 class="title">Healty food for every day</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

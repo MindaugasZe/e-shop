@@ -1,0 +1,46 @@
+.form-control {
+  flex: 0.1 1 auto;
+  border: 1px solid #198754;
+}
+
+.input-group .btn:focus,
+.form-control:focus {
+  box-shadow: 0 0 0 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.info-box {
+  max-height: 200px;
+}
+
+.back-to-shop-button {
+  text-decoration: none;
+}
+
+.back-to-shop-button:hover {
+  color: #fff;
+}
+
+.rounded {
+  min-height: 176px;
+}
+
+.cart-item-info {
+  min-height: 112px;
+}
+
+.cart-product-image img {
+  width: auto;
+  max-height: 80px;
+}
